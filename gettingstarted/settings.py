@@ -26,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
-        "LOCATION": os.environ.get('REDIS_URL'),
+        "LOCATION": os.environ.get('REDIS_TLS_URL'),
         "OPTIONS": {
                 "ssl_cert_reqs": None
         }

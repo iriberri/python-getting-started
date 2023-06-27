@@ -7,7 +7,11 @@ from django.views.decorators.cache import cache_page
 
 @cache_page(60 * 15)
 def index(request):
-    return render(request, "index.html")
+    try:
+        return render(request, "index.html")
+    except Exception as e:
+        print(e)
+    
 
 
 def db(request):

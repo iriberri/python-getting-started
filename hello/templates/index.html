@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load cache %}
+{% cache 500 recipe %}
 
 {% block content %}
 
@@ -57,3 +58,4 @@
   </div>
 </div>
 {% endblock %}
+{% endcache %}

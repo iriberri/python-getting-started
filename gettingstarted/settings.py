@@ -28,7 +28,6 @@ CACHES = {
         "BACKEND": "django.core.cache.backends.redis.RedisCache",
         "LOCATION": os.environ.get('REDIS_TLS_URL'),
         "OPTIONS": {
-                "ssl_cert_reqs": "require"
         }
     }
 }

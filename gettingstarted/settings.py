@@ -23,6 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Before using your Heroku app in production, make sure to review Django's deployment checklist:
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": os.environ.get('REDIS_URL'),
+        "OPTIONS": {
+                "ssl_cert_reqs": None
+        }
+    }
+}
+    
 # Django requires a unique secret key for each Django app, that is used by several of its
 # security features. To simplify initial setup (without hardcoding the secret in the source
 # code) we set this to a random value every time the app starts. However, this will mean many
